@@ -97,7 +97,92 @@ In Data Lake Storage Gen1, data engineers query data by using the U-SQL language
 Because Data Lake Storage supports Azure Active Directory ACLs, security administrators can control data access by using the familiar Active Directory Security Groups. Role-based access control (RBAC) is available both in Gen1 and Gen2. Built-in security groups include ReadOnlyUsers, WriteAccessUsers, and FullAccessUsers.
 
 Enable the firewall to limit traffic to only Azure services. Data Lake Storage automatically encrypts data at rest, protecting data privacy.
+# Understand Azure Cosmos DB
+
+-   5 minutes
+
+Azure Cosmos DB is a globally distributed, multimodel database. You can deploy it by using several API models:
+
+-   SQL API
+-   MongoDB API
+-   Cassandra API
+-   Gremlin API
+-   Table API
+
+Because of the multimodel architecture of Azure Cosmos DB, you benefit from each model's inherent capabilities. For example, you can use MongoDB for semistructured data, Cassandra for wide columns, or Gremlin for graph databases. When you move your data from SQL, MongoDB, or Cassandra to Azure Cosmos DB, applications that are built using the SQL, MongoDB, or Cassandra APIs will continue to operate.
+
+Note
+
+For more information about the APIs that are available in Azure Cosmos DB, see  [Choose the appropriate API for Azure Cosmos DB storage](https://docs.microsoft.com/learn/modules/choose-api-for-cosmos-db/).
+
+## When to use Azure Cosmos DB
+
+Deploy Azure Cosmos DB when you need a NoSQL database of the supported API model, at planet scale, and with low latency performance. Currently, Azure Cosmos DB supports five-nines uptime (99.999 percent). It can support response times below 10 ms when it's provisioned correctly.
+
+Consider this example where Azure Cosmos DB helps resolve a business problem. Contoso is an e-commerce retailer based in Manchester, UK. The company sells children's toys. After reviewing Power BI reports, Contoso's managers notice a significant decrease in sales in Australia. Managers review customer service cases in Dynamics 365 and see many Australian customer complaints that their site's shopping cart is timing out.
+
+Contoso's network operations manager confirms the problem. It's that the company's only data center is located in London. The physical distance to Australia is causing delays. Contoso applies a solution that uses the Microsoft Australia East datacenter to provide a local version of the data to users in Australia. Contoso migrates their on-premises SQL Database to Azure Cosmos DB by using the SQL API. This solution improves performance for Australian users. The data can be stored in the UK and replicated to Australia to improve throughput times.
+
+## Key features
+
+Azure Cosmos DB supports 99.999 percent uptime. You can invoke a regional failover by using programing or the Azure portal. An Azure Cosmos DB database will automatically fail over if there's a regional disaster.
+
+By using multimaster replication in Azure Cosmos DB, you can often achieve a response time of less than one second from anywhere in the world. Azure Cosmos DB is guaranteed to achieve a response time of less than 10 ms for reads and writes.
+
+To maintain the consistency of the data in Azure Cosmos DB, your engineering team should introduce a new set of consistency levels that address the unique challenges of planet-scale solutions. Consistency levels include strong, bounded staleness, session, consistent prefix, and eventual.
+
+## Data ingestion
+
+To ingest data into Azure Cosmos DB, use Azure Data Factory, create an application that writes data into Azure Cosmos DB through its API, upload JSON documents, or directly edit the document.
+
+## Queries
+
+As a data engineer, you can create stored procedures, triggers, and user-defined functions (UDFs). Or use the JavaScript query API. You'll also find other methods to query the other APIs within Azure Cosmos DB. For example, in the Data Explorer component, you can use the graph visualization pane.
+
+## Data security
+
+Azure Cosmos DB supports data encryption, IP firewall configurations, and access from virtual networks. Data is encrypted automatically. User authentication is based on tokens, and Azure Active Directory provides role-based security.
+
+Azure Cosmos DB meets many security compliance certifications, including HIPAA, FedRAMP, SOCS, and HITRUST.
+# Understand Azure SQL Database
+
+-   5 minutes
+
+Azure SQL Database is a managed relational database service. It supports structures such as relational data and unstructured formats such as spatial and XML data. SQL Database provides online transaction processing (OLTP) that can scale on demand. You'll also find the comprehensive security and availability that you appreciate in Azure database services.
+
+Important
+
+This unit focuses on Azure SQL Database, the  _platform as a service_  (PaaS) database offering. Here we don't cover Microsoft SQL Server instances that are installed locally or within an Azure virtual machine (VM). Although these are similar, the configuration and benefits of Microsoft SQL Server differ from those of Azure SQL Database.
+
+## When to use SQL Database
+
+Use SQL Database when you need to scale up and scale down OLTP systems on demand. SQL Database is a good solution when your organization wants to take advantage of Azure security and availability features. Organizations that choose SQL Database also avoid the risks of capital expenditures and of increasing operational spending on complex on-premises systems.
+
+SQL Database can be more flexible than an on-premises SQL Server solution because you can provision and configure it in minutes. Even more, SQL Database is backed up by the Azure service-level agreement (SLA).
+
+## Key features
+
+SQL Database delivers predictable performance for multiple resource types, service tiers, and compute sizes. Requiring almost no administration, it provides dynamic scalability with no downtime, built-in intelligent optimization, global scalability and availability, and advanced security options. These capabilities let you focus on rapid app development and on speeding up your time to market. You no longer have to devote precious time and resources to managing virtual machines and infrastructure.
+
+## Ingesting and processing data
+
+SQL Database can ingest data through application integration from a wide range of developer SDKs. Allowed programming languages include .NET, Python, Java, and Node.js. Beyond applications, you can also ingest data through Transact-SQL (T-SQL) techniques and from the movement of data using Azure Data Factory.
+
+## Queries
+
+Use T-SQL to query the contents of a SQL Database. This method benefits from a wide range of standard SQL features to filter, order, and project the data into the form you need.
+
+## Data security
+
+SQL Database provides a range of built-in security and compliance features. These features help your application meet security and compliance requirements like these:
+
+-   Advanced Threat Protection
+-   SQL Database auditing
+-   Data encryption
+-   Azure Active Directory authentication
+-   Multifactor authentication
+-   Compliance certification
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzc2ODI0MiwxMDE2ODU2NTM1LDU5OT
-kyMzQxNV19
+eyJoaXN0b3J5IjpbLTEyOTc0MjczOTIsMTAxNjg1NjUzNSw1OT
+k5MjM0MTVdfQ==
 -->
