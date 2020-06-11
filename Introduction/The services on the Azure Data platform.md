@@ -326,8 +326,9 @@ Analysts, data scientists, developers, and others use Data Catalog to discover, 
 
 Data Catalog is a fully managed cloud service. Users discover and explore data sources, and they help the organization document information about their data sources.
 
-
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTEwNjM0OTYsMTg2MDQ4MDMzMywtMTQwNT
-c3NjMzNCwxMDE2ODU2NTM1LDU5OTkyMzQxNV19
+eyJoaXN0b3J5IjpbLTI4MzA1NjAyMCw1MTA2MzQ5NiwxODYwND
+gwMzMzLC0xNDA1Nzc2MzM0LDEwMTY4NTY1MzUsNTk5OTIzNDE1
+XX0=
 -->
